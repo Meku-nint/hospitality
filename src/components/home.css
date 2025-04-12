@@ -1,0 +1,133 @@
+/* Background image section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slogan text */
+.slogan {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* Popup styles */
+.feedback-popup-container {
+  position: relative;
+  top:80%;
+  left: 30%;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+}
+
+.feedback-popup {
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  position: relative;
+  animation: popup-fade-in 0.4s ease-out;
+}
+
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Popup header */
+.popup-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.popup-header p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 5px 0 15px;
+}
+
+/* Popup close button */
+.popup-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.5rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.popup-body textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.95rem;
+  resize: none;
+}
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.submit-btn {
+  background-color: #4BB543;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3aa237;
+}
+
+.submit-btn:disabled {
+  background-color: #a0d6a0;
+  cursor: not-allowed;
+}
+.popup-thankyou {
+  text-align: center;
+  padding: 20px;
+}
+
+.popup-thankyou svg {
+  margin-bottom: 10px;
+}
+
+.popup-thankyou h3 {
+  margin-bottom: 5px;
+  color: #4BB543;
+}
