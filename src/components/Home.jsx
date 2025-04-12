@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "./NavBar";
 import "./home.css";
+import NavBar from "./NavBar";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(true);
@@ -9,18 +9,14 @@ const Home = () => {
   const [showThankYouMessage, setShowThankYouMessage] = useState(false);
 
   const currentHour = new Date().getHours();
-
-  // Set popup question based on time of day
   useEffect(() => {
     if (currentHour >= 18 || currentHour < 6) {
       setFeedbackQuestion("How was your dinner experience?");
     } else if (currentHour >= 6 && currentHour < 12) {
       setFeedbackQuestion("How was your breakfast this morning?");
     } else {
-      setFeedbackQuestion("How was your lunch today?");
+      setFeedbackQuestion("How was our service still ?");
     }
-
-    // Show popup after 5 seconds
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 5000);
@@ -48,12 +44,12 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <div className="hero-section">
-        <img
+      <div className="hero-section" style={{content:"cover"}}>
+        <img className="hero-image" style={{ width: "100%", height: "800px" }}
           src="https://kurifturesorts.com/_nuxt/img/Tana.303f00c.webp"
           alt="Kuriftu Resorts"
-          className="hero-image"
-        />  
+        />
+
       </div>
       {showPopup && (
         <div
@@ -87,26 +83,23 @@ const Home = () => {
             ) : (
               <>
                 <div className="popup-header">
-                  <h3>We Value Your Opinion</h3>
-                  <p>{feedbackQuestion}</p>
-                </div>
-                <div className="popup-body">
+                  <h3 className="popup-title"style={{color: "#3498db"}}>We Value Your Opinion</h3>
+                  <p style={{color: "white"}}>{feedbackQuestion}</p>
+                  <div className="text-button">
                   <textarea
-                    style={{ width: "90%" }}
                     value={feedbackText}
                     onChange={(e) => setFeedbackText(e.target.value)}
                     placeholder="Share your experience with us..."
                     rows="3"
                   />
-                </div>
-                <div className="popup-actions">
                   <button
                     onClick={handleFeedbackSubmit}
                     disabled={!feedbackText.trim()}
                     className="submit-btn"
                   >
-                    Submit
+                    send
                   </button>
+                </div>
                 </div>
               </>
             )}
@@ -115,7 +108,7 @@ const Home = () => {
       )}
 
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} Kuriftu Resorts</p>
+        <p style={{color: "white"}}>&copy; {new Date().getFullYear()} Kuriftu Resorts</p>
       </footer>
     </div>
   );
