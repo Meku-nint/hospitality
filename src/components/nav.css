@@ -19,15 +19,11 @@
   margin: 0 auto;
   font-family: 'Poppins', sans-serif;
 }
-
-/* Logo styling */
 .logo img {
   height: 50px;
   border-radius: 10px;
   object-fit: cover;
 }
-
-/* Navigation links */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -49,14 +45,10 @@
   background-color: rgba(44, 62, 80, 0.1);
   color: #1abc9c;
 }
-
-/* Active link style */
 .nav-links .active {
   color: #1abc9c;
   font-weight: 600;
 }
-
-/* Active link underline animation */
 .nav-links a::after {
   content: "";
   position: absolute;
